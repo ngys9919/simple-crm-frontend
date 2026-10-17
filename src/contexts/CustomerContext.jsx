@@ -63,7 +63,7 @@ export function CustomerProvider({ children }) {
   const updateCustomer = async (customerId, updates) => {
     try {
       const response = await fetch(`${API_BASE}/customers/${customerId}`, {
-        method: "PATCH",
+        method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updates),
       });
