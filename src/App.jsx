@@ -18,11 +18,12 @@ import Spinner from "./components/Spinner";
 // Lazy loading
 const ProductsPage = lazy(() => import("./pages/ProductsPage"));
 
-export const API_BASE = "http://localhost:3001";
+// export const API_BASE = "http://localhost:3001";
+export const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       {/* Routes Definition */}
       <Routes>
         {/* user accesses "/" - root path */}
